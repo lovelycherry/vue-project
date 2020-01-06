@@ -179,7 +179,7 @@ methods: {
 
 ```
 // 将每个分类下的food的高度相加，得到每个分类下对应的foodlist的总高度， 然后保存在this.listHeight数组中
-(bug解决:这里使用了一个定时器为了保证在页面dom渲染完成之后再获取元素的length属性，不然获取不到）
+//(bug解决:这里使用了一个定时器为了保证在页面dom渲染完成之后再获取元素的length属性，不然获取不到）
 _calculateHeight () {
       setTimeout(() => {
         let foodList = this.$refs.right.getElementsByClassName('food-list-hook');
@@ -260,8 +260,9 @@ var vm = new Vue({
 ```
 
 定义状态的属性和方法
-```
+
 从本地存储中获取car变量若没有则定义为数组，并对car进行状态的管理
+```
 var car = JSON.parse(localStorage.getItem('car') || '[]');
 var store = new Vuex.Store({
 	state: {
@@ -341,7 +342,7 @@ var store = new Vuex.Store({
 
 使用
 ```
-添加购物车
+//添加购物车
 methods: {
     handleCount (count) {
       this.selectedCount = count;
@@ -359,14 +360,14 @@ methods: {
     }
   }
   
- 删除商品
+ //删除商品
  methods: {
     remove (no) {
       this.$store.commit('removeGood', no)
     }
   }
   
- 更新购物车中商品
+ //更新购物车中商品
   methods: {
     countChanged () {
       this.$store.commit('updataCarInfo', {
@@ -376,7 +377,7 @@ methods: {
     }
   }
   
- 购物车中数目展示
+ //购物车中数目展示
  <div>商品总数<span>{{$store.getters.getCarCountAndPrice.count}}</span></div>
  <div>商品总价<span>{{$store.getters.getCarCountAndPrice.price}}</span></div>
 ```
