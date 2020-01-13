@@ -1,5 +1,5 @@
 # vue1
-这是一个类似于瑞幸咖啡的咖啡点餐的h5项目
+一个类似于瑞幸咖啡的咖啡点餐的h5项目
 
 # 技术栈
 vue + vuex + vue-router + axios + webpack + ES6 + less + flex
