@@ -4,7 +4,7 @@
 # 技术栈
 vue + vuex + vue-router + axios + webpack + ES6 + less + flex
 
-##项目运行
+## 项目运行
 ``` bash
 # 安装依赖
 npm install
