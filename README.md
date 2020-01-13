@@ -5,24 +5,28 @@
 vue + vuex + vue-router + axios + webpack + ES6 + less + flex
 
 ##项目运行
+``` bash
 # 安装依赖
 npm install
 
 # 开启本地服务器 localhost:8080
 npm run dev
+```
 
 ## 部分技术说明
 #### 一、 axios 的使用
 本项目借助node和express模拟了数据，具体如下：
 首先在webpack.config.js文件中添加以下配置（使用express模拟了服务器）：
+```
 const express = require('express');
 const app = express(); //请求server
 const appData = require('./src/mock/news.json'); //加载本地数据文件
 const localData = appData; //获取对应的本地数据
 const apiRoutes = express.Router();
 app.use('/api', apiRoutes); //通过路由请求数据
-
+```
 接着在devServer中对请求接口进行配置（before在服务内部的所有其他中间件之前， 提供执行自定义中间件的功能。 这可以用来配置自定义处理程序。）：
+```
 before(app) {
 			app.get('/api/localData', (req, res) => {
 				res.json({
@@ -31,7 +35,7 @@ before(app) {
 				});
 			});
 		}
-    
+```
 其次要在/src/mock/目录下新建news.json，写入需要的数据，如：
 
 ```
